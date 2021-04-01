@@ -10,7 +10,7 @@ const Orders = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5055/orderInfo?email=' + loggedInUser.email)
+        fetch('https://apple-pudding-21202.herokuapp.com/orderInfo?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setCheckOutData(data))
     }, [loggedInUser.email])

@@ -16,7 +16,7 @@ const AddBooks = () => {
             imageURL: imageURL
         };
         console.log(bookData);
-        const url = `http://localhost:5055/addBook`;
+        const url = `https://apple-pudding-21202.herokuapp.com/addBook`;
 
         fetch(url, {
             method: 'POST',

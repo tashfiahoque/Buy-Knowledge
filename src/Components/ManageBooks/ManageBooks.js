@@ -7,7 +7,7 @@ import './ManageBooks.css';
 const ManageBooks = () => {
     const [manageBooks, setManageBooks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5055/manage')
+        fetch('https://apple-pudding-21202.herokuapp.com/manage')
             .then(res => res.json())
             .then(data => setManageBooks(data))
     }, [])

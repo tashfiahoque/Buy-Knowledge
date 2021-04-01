@@ -17,7 +17,7 @@ const ProceedCheckOut = () => {
     const [placedOrder, setPlacedOrder] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:5055/book/${id}`)
+        fetch(`https://apple-pudding-21202.herokuapp.com/book/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSelectedBooks(data);
@@ -27,7 +27,7 @@ const ProceedCheckOut = () => {
 
     const onSubmit = data => {
         const orderDetails = { ...loggedInUser, bookName: bookName, author: author, price: price, formData: data, orderTime: new Date() };
-        fetch('http://localhost:5055/addOrder', {
+        fetch('https://apple-pudding-21202.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

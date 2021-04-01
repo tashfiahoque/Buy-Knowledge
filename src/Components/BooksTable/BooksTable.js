@@ -6,7 +6,7 @@ const BooksTable = (props) => {
 
 
     const deleteItem = id => {
-        fetch(`http://localhost:5055/deleteBook/${id}`, {
+        fetch(`https://apple-pudding-21202.herokuapp.com/deleteBook/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

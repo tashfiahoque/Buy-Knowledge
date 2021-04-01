@@ -6,7 +6,7 @@ import './Home.css';
 const Home = () => {
     const [books, setBooks] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5055/books')
+        fetch('https://apple-pudding-21202.herokuapp.com/books')
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])

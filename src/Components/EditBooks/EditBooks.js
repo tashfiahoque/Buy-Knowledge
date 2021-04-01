@@ -9,7 +9,7 @@ const EditBooks = () => {
     const { id } = useParams();
     const [editBooks, setEditBooks] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5055/book/${id}`)
+        fetch(`https://apple-pudding-21202.herokuapp.com/book/${id}`)
             .then(res => res.json())
             .then(data => setEditBooks(data))
     }, [id])
