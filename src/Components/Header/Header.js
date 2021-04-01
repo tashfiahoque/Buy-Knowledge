@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import './Header.css';
 const Header = () => {
 
     const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+    const handleLogOut = () => {
+        setLoggedInUser({});
+    }
     return (
         <>
 
@@ -32,9 +36,14 @@ const Header = () => {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/deals">Deals</Link>
                                 </li>
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="/login">Login</Link>
-                                </li>
+                                {loggedInUser.name && <h5>{loggedInUser.name}&nbsp;&nbsp;</h5>}
+                                {loggedInUser.name || loggedInUser.email
+                                    ? <li className="nav-item active onClick={signOut}">
+                                        <Link className="nav-link" to="/" onClick={handleLogOut}>Log out</Link>
+                                    </li>
+                                    : <li className="nav-item active">
+                                        <Link className="nav-link" to="/login">Login</Link>
+                                    </li>}
                             </ul>
                         </div>
                     </div>
