@@ -1,0 +1,82 @@
+div {
+    overflow: hidden;
+}
+.single-item {
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.single-item:hover {
+  box-shadow: 0 .5rem 0.5rem rgba(0, 0, 0, .15);
+  border-radius: 10px;
+  transform: rotateY(30deg) translateY(10px) scaleX(1.1);
+}  
+.card {
+  border: none;
+  border-radius: 20px;
+  background-color: #E8EAF6;
+  padding: 10% 0;
+}
+.card-body {
+  padding-bottom: 0;
+}
+.card-img-top {
+  margin: 0 auto;
+}
+.card-body h3{
+  line-height: 29px;
+  font-size: 24px;
+  font-weight: 700; 
+}
+.card-body h4{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  padding-bottom: 5%;
+}
+.card img{
+    max-width: 70%;
+  }
+.card-body span{
+  margin-left: 10px;
+}
+.buy-now-button{
+  font-weight: 500;
+  font-size: 20px;
+  padding: 10px 50px;
+  background: linear-gradient(to left, #5C6BC0, #C5CAE9);
+  border: none;
+  outline: none;
+  border-radius: 33px;
+  transition: 1s ease-in-out;
+}
+.buy-now-button:hover{
+  background: linear-gradient(to right, #5C6BC0, #C5CAE9);
+  color: #fff;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+  .card-body h3 {
+      line-height: 23px;
+      font-weight: 600;
+  }
+  .buy-now-button {
+      font-weight: 500;
+      font-size: 18px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-body h3 {
+      line-height: 23px;
+      font-size: 20px;
+  }
+  .buy-now-button {
+      font-weight: 400;
+      font-size: 14px;
+      padding: 10px 35px;
+  }
+  
+}

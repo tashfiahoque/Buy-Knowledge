@@ -18,10 +18,10 @@ const ManageBooks = () => {
             <div className="add-books">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-4 col-12">
                             <SideBar />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 col-12">
                             <BooksTable manageBooks={manageBooks} />
                         </div>
                     </div>

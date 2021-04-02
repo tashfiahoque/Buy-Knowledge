@@ -12,11 +12,10 @@ const Header = () => {
     }
     return (
         <>
-
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light" id="nav">
                     <div className="container">
-                        <Link className="navbar-brand logo" to="/"><h1>BUY KNOWLEDGE</h1></Link>
+                        <Link className="navbar-brand logo" to="/"><h1>KNOWLEDGE STORE</h1></Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation" onClick={handleNavCollapse}>

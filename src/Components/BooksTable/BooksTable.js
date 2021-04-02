@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './BooksTable.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 
 const BooksTable = (props) => {
-
+    const history = useHistory();
 
     const deleteItem = id => {
         fetch(`https://apple-pudding-21202.herokuapp.com/deleteBook/${id}`, {
@@ -11,13 +13,19 @@ const BooksTable = (props) => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                if (result) {
+                    alert('Deleted Successfully')
+                    history.push('/addBooks')
+                }
             })
     }
     return (
         <>
+            <div className="manage-books-title">
+                <h1>Manage Books</h1>
+            </div>
             <table className="table">
-                <thead>
+                <thead className="list-header">
                     <tr>
                         <th scope="col">Book Name</th>
                         <th scope="col">Author Name</th>
@@ -33,7 +41,8 @@ const BooksTable = (props) => {
                             <td>{item.price}</td>
                             <td>
                                 <Link to={`/editBooks/${item._id}`}>Edit</Link>
-                                <button onClick={() => deleteItem(item._id)}>Delete</button></td>
+                                <button onClick={() => deleteItem(item._id)} className="delete-button">
+                                    <FontAwesomeIcon icon={faTrashAlt} color="red" size="1x" /></button></td>
                         </tr>)
                     }
                 </tbody>

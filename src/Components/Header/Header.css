@@ -1,8 +1,10 @@
 #nav{
+    background: #5C6BC0;
     padding-top: 30px;
+    padding-bottom: 10px;
 }
 .logo h1{
-    color: #3B8A02!important;
+    color: #fff!important;
     font-size: 30px;
     font-weight: 700;
     font-style: italic;
@@ -20,7 +22,24 @@
   }
 .links li a:hover, .navbar-light .navbar-nav .nav-item.active .nav-link{
     color: #fff !important;
-    background: #3F797F;
+    background: #303F9F;
     padding: 5px 30px !important;
   }
   
+
+  /* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    #nav {
+        padding-bottom: 30px;
+    }
+    .navbar-nav {
+        align-items: end;
+        padding-right: 142px;
+    }
+    .menu ul li a{
+        padding: 6px 7px !important;
+    }
+    .logo h1{
+        font-size: 20px;
+    }
+}

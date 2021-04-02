@@ -1,0 +1,24 @@
+.sidebar{
+    background-color:#9FA8DA;
+    height: 900px;
+}
+.sidebar-title{
+    padding: 50px 25px 25px 89px;
+    color: #fff;
+    font-weight: 700;
+}
+a.nav-link{
+    color: #fff !important;
+}
+.sidebar-nav{
+    padding-left: 89px;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .sidebar {
+        width: 315px;
+        height: 347px;
+        border-radius: 5px;
+    }
+}

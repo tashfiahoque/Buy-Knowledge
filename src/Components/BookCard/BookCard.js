@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
-import { UserContext } from '../../App';
-
 import './BookCard.css';
 
 const BookCard = (props) => {
@@ -14,15 +12,17 @@ const BookCard = (props) => {
 
     return (
         <>
-
-            <div className="col-md-4">
-                <img src={imageURL} alt={bookName} />
-                <h1>{bookName}</h1>
-                <h4>{author}</h4>
-                <h5>{price}</h5>
-                <button onClick={() => handleBook(_id)}>Buy Now</button>
+            <div className="col-md-4 single-item text-center my-4">
+                <div className="card">
+                    <img className="card-img-top img-fluid" src={imageURL} alt={bookName} />
+                    <div className="card-body">
+                        <h3>{bookName}</h3>
+                        <h4>{author}</h4>
+                        <h4>{price}</h4>
+                        <button onClick={() => handleBook(_id)} className="buy-now-button">Buy Now</button>
+                    </div>
+                </div>
             </div>
-
         </>
     );
 };

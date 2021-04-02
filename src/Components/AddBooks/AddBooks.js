@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router';
 import SideBar from '../SideBar/SideBar';
 import './AddBooks.css';
 
 const AddBooks = () => {
     const { register, handleSubmit } = useForm();
     const [imageURL, setIMageURL] = useState(null);
+    const history = useHistory();
 
     const onSubmit = data => {
         const bookData = {
@@ -15,7 +17,6 @@ const AddBooks = () => {
             price: data.price,
             imageURL: imageURL
         };
-        console.log(bookData);
         const url = `https://apple-pudding-21202.herokuapp.com/addBook`;
 
         fetch(url, {
@@ -25,7 +26,12 @@ const AddBooks = () => {
             },
             body: JSON.stringify(bookData)
         })
-            .then(res => console.log('server side response', res))
+            .then(res => {
+                if (res.status === 200) {
+                    history.push('/manageBooks')
+                }
+            })
+
     };
 
     const handleImageUpload = event => {
@@ -47,29 +53,39 @@ const AddBooks = () => {
     return (
         <>
             <div className="add-books">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-4">
-                            <SideBar />
-                        </div>
-                        <div className="col-md-8">
+                <div className="row">
+                    <div className="col-md-4">
+                        <SideBar />
+                    </div>
+                    <div className="col-md-8 ">
+                        <div className="addBook-title">
                             <h1>Add Book</h1>
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <input name="book" ref={register({ required: true })} placeholder="Enter Book Name" />
-                                <br />
-                                <input name="author" ref={register({ required: true })} placeholder="Enter Author Name" />
-                                <br />
-                                <input name="price" type="quantity" ref={register({ required: true })} placeholder="Enter Price" />
-                                <br />
-                                <input name="exampleRequired" type="file" onChange={handleImageUpload} label="Add Book Cover Photo" ref={register({ required: true })} placeholder="Upload Photo" />
-                                <br />
-                                <input type="submit" />
-                            </form>
                         </div>
+
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div className="addBook-content">
+                                <div className="row">
+                                    <div className="col-md-5 col-12">
+                                        <label htmlFor="book">Book Name</label>
+                                        <input id="book" name="book" ref={register({ required: true })} placeholder="Enter Book Name" />
+                                        <label htmlFor="author">Author Name</label>
+                                        <input id="author" name="author" ref={register({ required: true })} placeholder="Enter Author Name" />
+                                    </div>
+                                    <div className="col-md-5 col-12">
+                                        <label htmlFor="price">Price</label>
+                                        <input id="price" name="price" type="quantity" ref={register({ required: true })} placeholder="Enter Price" />
+                                        <label htmlFor="photo">Add Book Cover Photo</label>
+                                        <input id="photo" name="exampleRequired" type="file" onChange={handleImageUpload} ref={register({ required: true })} placeholder="Upload Photo" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-12 d-flex justify-content-center save-button">
+                                <input type="submit" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
         </>
     );
 };

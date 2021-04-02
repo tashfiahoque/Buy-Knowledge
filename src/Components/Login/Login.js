@@ -5,6 +5,9 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import Header from '../Header/Header';
 
 
 const Login = () => {
@@ -32,11 +35,14 @@ const Login = () => {
         });
     }
 
-
-    console.log(loggedInUser)
     return (
         <>
-            <button onClick={handleGoogleSignIn}>Google Sign in</button>
+            <Header />
+            <div className="google-button d-flex justify-content-center align-items-center">
+                <FontAwesomeIcon icon={faGoogle} className="google-icon" color="red" size="2x" />
+                <input type="submit" value="Continue with Google" id="signin_button" onClick={handleGoogleSignIn} />
+            </div>
+
         </>
     );
 };
