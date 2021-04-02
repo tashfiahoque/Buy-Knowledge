@@ -1,7 +1,4 @@
-.ship-form{
-    margin:30px 100px;
-}
-.ship-form input {
+.place-order-form input {
     display: block;
     margin-top: 30px;
     padding: 5px;
@@ -11,4 +8,44 @@
 }
 .error{
     color: red;
+}
+.selected-img{
+    width: 20%;
+}
+.checkout{
+    padding: 70px 0px;
+}
+.checkout-table thead{
+background-color: #9FA8DA;
+color: #fff;
+font-size: 20px;
+}
+.text-color{
+    color: #3D5AFE;
+    font-size: 20px;
+}
+.checkout-button, .go-back-button{
+    background-color: #9FA8DA;
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .checkout-table thead {
+        font-size: 14px;
+    }
+    .selected-img {
+        width: 93%;
+    }
+    .checkout-table h5{
+        font-size: 12px;
+    }
+    .place-order-form input {
+        width: 248px;
+    }
+    .text-color{
+        font-size: 16px;
+    }
 }

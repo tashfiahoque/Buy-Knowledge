@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import BooksTable from '../BooksTable/BooksTable';
 import SideBar from '../SideBar/SideBar';
+import Spinner from '../Spinner/Spinner';
 import './ManageBooks.css';
 
 const ManageBooks = () => {
@@ -21,7 +21,7 @@ const ManageBooks = () => {
                         <div className="col-md-4 col-12">
                             <SideBar />
                         </div>
-                        <div className="col-md-8 col-12">
+                        <div className="col-md-8 col">
                             <BooksTable manageBooks={manageBooks} />
                         </div>
                     </div>

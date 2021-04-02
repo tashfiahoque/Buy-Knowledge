@@ -35,12 +35,11 @@ const BooksTable = (props) => {
                 </thead>
                 <tbody>
                     {
-                        props.manageBooks.map(item => <tr key={item._id}>
-                            <th scope="row">{item.bookName}</th>
-                            <td>{item.author}</td>
-                            <td>{item.price}</td>
+                        props.manageBooks.map(item => <tr key={item._id} className="font-change">
+                            <th><h5>{item.bookName}</h5></th>
+                            <td><h5>{item.author}</h5></td>
+                            <td><h5>{item.price}</h5></td>
                             <td>
-                                <Link to={`/editBooks/${item._id}`}>Edit</Link>
                                 <button onClick={() => deleteItem(item._id)} className="delete-button">
                                     <FontAwesomeIcon icon={faTrashAlt} color="red" size="1x" /></button></td>
                         </tr>)

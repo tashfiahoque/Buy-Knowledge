@@ -42,12 +42,12 @@ div {
 }
 .buy-now-button{
   font-weight: 500;
-  font-size: 20px;
-  padding: 10px 50px;
+  font-size: 16px;
+  padding: 5px 15px;
   background: linear-gradient(to left, #5C6BC0, #C5CAE9);
   border: none;
   outline: none;
-  border-radius: 33px;
+  border-radius: 25px;
   transition: 1s ease-in-out;
 }
 .buy-now-button:hover{
@@ -63,20 +63,19 @@ div {
   }
   .buy-now-button {
       font-weight: 500;
-      font-size: 18px;
+      font-size: 14px;
+      border-radius: 5px;
   }
 }
+.list-group-item {
+  padding: 0 40px !important;
+  background-color: #E8EAF6!important; 
+  border: none !important;
+}
+
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .card-body h3 {
-      line-height: 23px;
-      font-size: 20px;
-  }
-  .buy-now-button {
-      font-weight: 400;
-      font-size: 14px;
-      padding: 10px 35px;
-  }
+ 
   
 }

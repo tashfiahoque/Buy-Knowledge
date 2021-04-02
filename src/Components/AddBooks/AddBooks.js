@@ -6,7 +6,7 @@ import SideBar from '../SideBar/SideBar';
 import './AddBooks.css';
 
 const AddBooks = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [imageURL, setIMageURL] = useState(null);
     const history = useHistory();
 
@@ -68,14 +68,18 @@ const AddBooks = () => {
                                     <div className="col-md-5 col-12">
                                         <label htmlFor="book">Book Name</label>
                                         <input id="book" name="book" ref={register({ required: true })} placeholder="Enter Book Name" />
+                                        {errors.book && <span className="error">Book Nameis required</span>}
                                         <label htmlFor="author">Author Name</label>
                                         <input id="author" name="author" ref={register({ required: true })} placeholder="Enter Author Name" />
+                                        {errors.author && <span className="error">Author Nameis required</span>}
                                     </div>
                                     <div className="col-md-5 col-12">
                                         <label htmlFor="price">Price</label>
                                         <input id="price" name="price" type="quantity" ref={register({ required: true })} placeholder="Enter Price" />
+                                        {errors.price && <span className="error">Price is required</span>}
                                         <label htmlFor="photo">Add Book Cover Photo</label>
                                         <input id="photo" name="exampleRequired" type="file" onChange={handleImageUpload} ref={register({ required: true })} placeholder="Upload Photo" />
+                                        {errors.exampleRequired && <span className="error">Image is required</span>}
                                     </div>
                                 </div>
                             </div>

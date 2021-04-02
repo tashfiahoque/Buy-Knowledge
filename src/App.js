@@ -43,9 +43,6 @@ function App() {
             <Route path="/manageBooks">
               <ManageBooks />
             </Route>
-            <Route path="/editBooks/:id">
-              <EditBooks />
-            </Route>
             <PrivateRoute path="/selectBook/:id">
               <ProceedCheckOut />
             </PrivateRoute>

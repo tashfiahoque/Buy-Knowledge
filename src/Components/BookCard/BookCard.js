@@ -18,8 +18,10 @@ const BookCard = (props) => {
                     <div className="card-body">
                         <h3>{bookName}</h3>
                         <h4>{author}</h4>
-                        <h4>{price}</h4>
-                        <button onClick={() => handleBook(_id)} className="buy-now-button">Buy Now</button>
+                        <ul className="list-group list-group-horizontal">
+                            <li className="list-group-item"><h4>{price}</h4></li>
+                            <li className="list-group-item"><button onClick={() => handleBook(_id)} className="buy-now-button">Buy Now</button></li>
+                        </ul>
                     </div>
                 </div>
             </div>
