@@ -1,5 +1,11 @@
-This react app focused on storing data to mongodb using firebase authentication.
+BUY KNOWLEDGE - A book selling MERN stack site
 
-This app made with boostrap,react-router,firebase-authentication,mongodb.
+Authenticated User can buy books and check their order list.
 
-This is also deployed using heroku storing and firebase hosting.
+Admin can add, manage books.
+
+Focused on storing data to mongodb using firebase authentication.
+
+Made with boostrap,react-router,firebase-authentication,mongodb.
+
+Deployed using heroku storing and firebase hosting.
