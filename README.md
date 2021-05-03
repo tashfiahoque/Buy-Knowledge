@@ -1,4 +1,4 @@
-BUY KNOWLEDGE - A book selling MERN stack site
+KNOWLEDGE Store - A book selling MERN stack site
 
 Authenticated User can buy books and check their order list.
 
